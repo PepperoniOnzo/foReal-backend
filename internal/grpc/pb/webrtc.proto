@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package webrtc;
+option go_package = "webrtc-server/internal/grpc/pb;pb";
+
+service WebRTCService {
+  rpc JoinRoom (JoinRoomRequest) returns (JoinRoomResponse);
+}
+
+message JoinRoomRequest {
+  string user_id = 1;
+  string room_id = 2;
+}
+
+message JoinRoomResponse {
+  string message = 1;
+}
